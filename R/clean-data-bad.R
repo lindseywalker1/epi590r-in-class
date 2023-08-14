@@ -4,9 +4,13 @@ nlsy_cols <- c("glasses", "eyesight", "sleep_wkdy", "sleep_wknd",
 
 library(tidyverse)
 setwd("~/Documents/Teaching/Emory/epi590r-in-class/data/raw/")
+		# setting working directory is not the smartest way to specify file path because
+			# it is only a file path that YOU this computer user has...
+				# does not allow for collaboration - ex: this is Dr. Louisa's wd not mine
 nlsy <- read_csv("nlsy.csv",
 								 na = c("-1", "-2", "-3", "-4", "-5", "-998"),
 								 skip = 1, col_names = nlsy_cols)
+		# there is an error because that is not where my data is !
 
 library(dplyr)
 nlsy <- nlsy |>
@@ -15,8 +19,9 @@ nlsy <- nlsy |>
 				 race_eth_cat = factor(race_eth, labels = c("Hispanic", "Black", "Non-Black, Non-Hispanic")),
 				 eyesight_cat = factor(eyesight, labels = c("Excellent", "Very good", "Good", "Fair", "Poor")),
 				 glasses_cat = factor(glasses, labels = c("No", "Yes")))
+		# says nlsy object not found
 
 nlsy <- na.omit(nlsy)
 
-setwd("../clean/")
+setwd("../clean/")     # this is
 write_rds(nlsy, "nlsy-complete-cases.rds")
