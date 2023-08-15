@@ -2,16 +2,24 @@
 # Mon 8/14 - Tues 8/15
 
 #Exercise 1
-# 1. installing "use this" package > install.packages("usethis")
+# 1. installing "use this" package >
+install.packages("usethis")
 
 #2. create GitHub account and connect it to my RStudio
-	# usethis::use_git_config(user.name = "lindseywalker1", user.email = "lindsey.walker@emory.edu")
+usethis::use_git_config(user.name = "lindseywalker1", user.email = "lindsey.walker@emory.edu")
 
 # 3. create github token, like a password for your RStudio + GitHUb connection
-	# run this code > usethis::create_github_token() > and it will have you create a personal token
+	# run this code >
+usethis::create_github_token()
+#and it will have you create a personal token
 	# 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
+########because i wrote the token in and then committed it to my local reop,
+#it didnt like that.... so i generated a new token
 
-# 4. add the token password to RStudio by running this > gitcreds::gitcreds_set() and entering token
+
+# 4. add the token password to RStudio by running this >
+gitcreds::gitcreds_set()
+2#and entering token
 
 
 #Exercise 2
